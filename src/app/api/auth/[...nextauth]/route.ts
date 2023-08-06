@@ -51,7 +51,7 @@ export const authOptions: NextAuthOptions = {
       if (userData.length > 0) {
         session.user = {
           ...session.user,
-          id: userData[0].id,
+          id: userData[0]._id,
           nickname: userData[0].nickname,
           auth: userData[0].auth,
         }
@@ -61,6 +61,9 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: '/auth/signin',
+  },
+  session: {
+    maxAge: 60 * 60,
   },
   secret: process.env.SECRET,
 }

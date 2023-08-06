@@ -15,7 +15,7 @@ export type Group = {
   relatedCategories: Array<Category>;
 }
 
-export async function getGroups2() {
+export async function getGroups() {
   return client.fetch(
     `*[_type == "group"]{
       "id": _id,
@@ -33,7 +33,7 @@ export async function getGroups2() {
   );
 }
 
-export async function getCategories2() {
+export async function getCategories() {
   return client.fetch(
     `*[_type == "category"]{
       "id": _id,

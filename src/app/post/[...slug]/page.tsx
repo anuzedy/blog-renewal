@@ -9,7 +9,8 @@ type Props = {
 };
 
 export default function PostPage({ params: { slug } }: Props) {
-  const [category, id] = slug;
+  const [category, no] = slug;
+  const num = Number(no);
 
   return (
     <>
@@ -17,7 +18,7 @@ export default function PostPage({ params: { slug } }: Props) {
         <Category cateName={category} />
       </div>
       <div className='col-span-7'>
-        <Post category={category || ''} id={id || ''} />
+        <Post category={category || ''} num={num || 0} />
       </div>
     </>
   )

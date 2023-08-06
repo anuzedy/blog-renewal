@@ -50,8 +50,8 @@ export default function RecentCarousel({ deviceType }: { deviceType: string }) {
       slidesToSlide={1}
     >
       {
-        contents.map((v) =>
-          <Link href={`/post/all/${v.id}`} key={v.id}><Card title={v.title} description={v.description} thumbnail={v.thumbnail} /></Link>
+        contents.map((v, i) =>
+          <Link href={`/post/all/${i}`} key={v.id}><Card title={v.title} description={v.description} thumbnail={v.thumbnail} /></Link>
         )
       }
     </Carousel>

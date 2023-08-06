@@ -9,7 +9,6 @@ export default function Home() {
     <div className='mx-5'>
       <h1 className='my-10'>최근 게시물</h1>
       <RecentCarousel deviceType='desktop' />
-      <div>abc</div>
     </div>
   )
 }

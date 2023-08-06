@@ -39,7 +39,7 @@ export default function Header() {
       </div>
       <nav className='border border-solid px-5 py-5'>
         <Link className='pr-8' href='/'>홈</Link>
-        <Link href={`/post/all`}>포스트</Link>
+        <Link href={`/post/all/0`}>포스트</Link>
       </nav>
     </header>
   )

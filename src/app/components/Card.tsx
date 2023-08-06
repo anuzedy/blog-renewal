@@ -9,7 +9,7 @@ export default function Card({ title, description, thumbnail }: { title: string,
       <div
         className="block max-w-xs rounded-lg bg-white shadow-lg dark:bg-neutral-700">
         <Image
-          className="rounded-t-lg w-screen"
+          className="rounded-t-lg w-screen h-52"
           src={`${thumbnail}`}
           alt=""
           width={300}
