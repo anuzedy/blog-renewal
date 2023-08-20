@@ -19,7 +19,7 @@ export default function Header() {
     <header>
       <div className='flex justify-between items-center p-4'>
         <Link href='/'>
-          <h1 className='inline-block text-3xl text-bold py-7'>잡동사니 블로그</h1>
+          <h1 className='inline-block text-3xl text-bold py-7'>잡동사니 창고</h1>
         </Link>
         <nav className='flex gap-5'>
           {
