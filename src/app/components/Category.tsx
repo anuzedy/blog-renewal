@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { Category as Cate, Group } from '../service/categories';
 import axios from 'axios';
 import Link from 'next/link';
-import { Post } from '../service/posts';
 
 type Props = {
   cateName: string
@@ -15,10 +14,10 @@ const underlineStyle = {
 
 export default function Category({ cateName }: Props) {
   const [groups, setGroups] = useState<Array<Group>>([]);
-  const [allPosts, setAllPosts] = useState<Array<Post>>([]);
   useEffect(() => {
     axios.get('/api/groups')
       .then(res => {
+        console.log(res.data.groups);
         setGroups(res.data.groups);
       });
   }, [cateName]);
@@ -34,7 +33,7 @@ export default function Category({ cateName }: Props) {
             <p className='font-semibold'>{group.title}</p>
             <ul>
               {group.relatedCategories.map((category) =>
-                <li key={category.name} className='pl-5' style={cateName === category.name ? underlineStyle : {}}>
+                <li key={category.name} className='pl-5' style={cateName === category.id ? underlineStyle : {}}>
                   <Link href={`/post/${category.id}/0`}>{category.title}</Link>
                 </li>
               )}
