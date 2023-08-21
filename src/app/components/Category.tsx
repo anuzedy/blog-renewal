@@ -17,7 +17,6 @@ export default function Category({ cateName }: Props) {
   useEffect(() => {
     axios.get('/api/groups')
       .then(res => {
-        console.log(res.data.groups);
         setGroups(res.data.groups);
       });
   }, [cateName]);
