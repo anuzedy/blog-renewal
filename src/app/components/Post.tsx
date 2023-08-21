@@ -27,6 +27,8 @@ export default function Post({ category, num }: Props) {
     })
       .then(res => {
         const posts = res.data.posts;
+        console.log(res);
+        console.log(posts);
 
         if (posts[num]) {
           setNoPost('');
