@@ -5,3 +5,5 @@ export async function GET(request: NextRequest) {
   const posts = await getPostsAll();
   return NextResponse.json({ posts });
 }
+
+export const revalidate = 0;

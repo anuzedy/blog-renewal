@@ -21,7 +21,7 @@ export default function Post({ category, num }: Props) {
 
   useEffect(() => {
     const apiUrl = category === 'all' ? '/api/posts' : '/api/postByCategory';
-    const params = category === 'all' ? { time: new Date().getTime() } : { category };
+    const params = category === 'all' ? {} : { category };
     axios.get(apiUrl, {
       params,
     })
