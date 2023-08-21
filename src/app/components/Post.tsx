@@ -21,14 +21,9 @@ export default function Post({ category, num }: Props) {
 
   useEffect(() => {
     const apiUrl = category === 'all' ? '/api/posts' : '/api/postByCategory';
-    const params = category === 'all' ? {} : { category };
+    const params = category === 'all' ? { time: new Date().getTime() } : { category };
     axios.get(apiUrl, {
       params,
-      headers: {
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache',
-        'Expires': '0',
-      },
     })
       .then(res => {
         const posts = res.data.posts;
