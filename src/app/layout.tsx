@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 import AuthSession from './components/AuthSession'
 
 export const metadata = {
-  title: '잡동사니 블로그',
+  title: '잡동사니 창고',
   description: '굿',
   icons: {
     icon: '/favicon.ico',
