@@ -23,12 +23,15 @@ export default function Post({ category, num }: Props) {
     const apiUrl = category === 'all' ? '/api/posts' : '/api/postByCategory';
     const params = category === 'all' ? {} : { category };
     axios.get(apiUrl, {
-      params
+      params,
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache',
+        'Expires': '0',
+      },
     })
       .then(res => {
         const posts = res.data.posts;
-        console.log(res);
-        console.log(posts);
 
         if (posts[num]) {
           setNoPost('');
