@@ -1,25 +1,18 @@
-'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Category as Cate, Group } from '../service/categories';
-import axios from 'axios';
 import Link from 'next/link';
 
 type Props = {
-  cateName: string
+  cateName: string;
+  groupPromise: Promise<Array<Group>>;
 }
 
 const underlineStyle = {
   textDecorationLine: 'underline',
 }
 
-export default function Category({ cateName }: Props) {
-  const [groups, setGroups] = useState<Array<Group>>([]);
-  useEffect(() => {
-    axios.get('/api/groups')
-      .then(res => {
-        setGroups(res.data.groups);
-      });
-  }, [cateName]);
+export default async function Category({ cateName, groupPromise }: Props) {
+  const groups = await groupPromise;
 
   return (
     <>

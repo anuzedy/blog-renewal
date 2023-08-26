@@ -23,7 +23,7 @@ export default function Post({ category, num }: Props) {
     const apiUrl = category === 'all' ? '/api/posts' : '/api/postByCategory';
     const params = category === 'all' ? {} : { category };
     axios.get(apiUrl, {
-      params
+      params,
     })
       .then(res => {
         const posts = res.data.posts;
