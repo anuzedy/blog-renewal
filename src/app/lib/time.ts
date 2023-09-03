@@ -1,4 +1,5 @@
 export function sanityTimeFormat(date: string) {
   date = date.replace('T', ' ').replace('Z', '');
-  return date;
+  const splitDate = date.split(' ')[0];
+  return splitDate;
 }
